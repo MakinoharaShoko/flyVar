@@ -1,6 +1,6 @@
 {
   "name": "flyvar",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "F*** you, I only want to fly my Global variable.",
   "main": "index.js",
   "scripts": {
