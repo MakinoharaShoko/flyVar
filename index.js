@@ -1,7 +1,9 @@
 class flyVar {
-    flyStorage = {};
-    flyEffect = [];
-    flySingle = {};
+    constructor(){
+        this.flyStorage = {};
+        this.flyEffect = [];
+        this.flySingle = {};
+    }
     set(k, v) {
         this.flyStorage[k] = v;
         this.runAll();

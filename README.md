@@ -21,7 +21,7 @@ import flyVar from 'flyvar';
 ### initialize a storage
 
 ```js
-const store = new flyVar;
+const store = new flyVar();
 ```
 
 ### use a global variable
