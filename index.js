@@ -1,5 +1,5 @@
 class flyVar {
-    constructor(){
+    constructor() {
         this.flyStorage = {};
         this.flyEffect = [];
         this.flySingle = {};
@@ -11,15 +11,21 @@ class flyVar {
     }
     effect(callback) {
         if (typeof callback === 'function')
-            this.flyEffect.push(callback)
+            this.flyEffect.push(callback);
     }
     get(k) {
         if (this.flyStorage.hasOwnProperty(k))
             return this.flyStorage[k];
     }
     connect(k, callback) {
-        this.flySingle[k] = new Object();
-        this.flySingle[k].callback = callback;
+        if (this.hasOwnProperty(k))
+            this.flySingle[k].callback.push(callback);
+        else {
+            this.flySingle[k] = new Object();
+            this.flySingle[k].callback = [];
+            this.flySingle[k].callback.push(callback);
+        }
+
     }
     runAll() {
         //run global
@@ -29,10 +35,13 @@ class flyVar {
     }
     runSingle(k) {
         //run connected function
-        if (this.hasOwnProperty(k) &&
-            this.flySingle[k].hasOwnProperty('callback') &&
-            typeof this.flySingle[k]['callback'] === 'function')
-            this.flySingle[k].callback();
+        if (this.flySingle.hasOwnProperty(k) &&
+            this.flySingle[k].hasOwnProperty('callback')) {
+            for (let callback of this.flySingle[k].callback) {
+                if (typeof callback === 'function')
+                    callback();
+            }
+        }
     }
 }
 

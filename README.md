@@ -32,6 +32,10 @@ store.set('valueKey',yourGlobalVariable)
 
 ### connect a global variable with a callback
 
+Recommended Use.
+
+**Note: When collocation with React Hook, pay attention to connect each function component only once, otherwise it may cause the connection every time it is re-rendered. One solution is to set a state and connect only when it is the initial value. **
+
 ```js
 store.connect('valueKey',()=>{
 	//do something
@@ -41,6 +45,10 @@ store.connect('valueKey',()=>{
 When this variable update, this callback will be triggered.
 
 ### set a global effect
+
+**(There may be a bug)**
+
+**Do not use unless there is no other way.**
 
 ```js
 store.effect(()=>{
@@ -86,6 +94,10 @@ store.set('valueKey',yourGlobalVariable)
 
 ### 将全局变量与一个回调连接
 
+推荐使用。
+
+**注意：在与 React Hook 搭配的时候，注意在每个函数组件只连接一次，否则可能会导致每次重新重新渲染的时候都连接。一个解决的办法是设置一个state，只在为初始值时连接。**
+
 ```js
 store.connect('valueKey',()=>{
 	//do something
@@ -95,6 +107,10 @@ store.connect('valueKey',()=>{
 当这个全局变量的值改变，回调会被触发。
 
 ### 设置全局效果
+
+**（可能存在bug）**
+
+**不到万不得已不要使用。**
 
 ```js
 store.effect(()=>{
