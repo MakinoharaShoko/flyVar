@@ -30,6 +30,10 @@ const store = new flyVar();
 store.set('valueKey',yourGlobalVariable)
 ```
 
+```js
+store.get('valueKey')
+```
+
 ### connect a global variable with a callback
 
 Recommended Use.
@@ -91,6 +95,12 @@ const store = new flyVar;
 ```js
 store.set('valueKey',yourGlobalVariable)
 ```
+
+```js
+store.get('valueKey')
+```
+
+
 
 ### 将全局变量与一个回调连接
 
