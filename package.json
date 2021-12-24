@@ -1,7 +1,7 @@
 {
   "name": "flyvar",
-  "version": "1.0.6",
-  "description": "F*** you, I only want to fly my Global variable.",
+  "version": "1.0.7",
+  "description": "F*** you, I only want to fly my Global variable! | 老子就想飞全局变量",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

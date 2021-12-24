@@ -43,7 +43,7 @@ Recommended Use.
 ```js
 store.connect('valueKey',()=>{
 	//do something
-})
+},name)
 ```
 
 When this variable update, this callback will be triggered.
@@ -57,10 +57,14 @@ When this variable update, this callback will be triggered.
 ```js
 store.effect(()=>{
 	//do something
-})
+},name)
 ```
 
 When a variable in this storage changed, this callback will be triggered.
+
+### When the callback function has the same name
+
+Will replace the old with the new.
 
 # 中文文档
 
@@ -111,7 +115,7 @@ store.get('valueKey')
 ```js
 store.connect('valueKey',()=>{
 	//do something
-})
+},name)
 ```
 
 当这个全局变量的值改变，回调会被触发。
@@ -125,7 +129,11 @@ store.connect('valueKey',()=>{
 ```js
 store.effect(()=>{
 	//do something
-})
+},name)
 ```
 
 当任何一个全局变量的值改变，回调会被触发。
+
+### 当回调函数重名时
+
+会以新的取代旧的。
